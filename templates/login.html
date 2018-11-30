@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sign In
+{% endblock %}
+
+{% block main %}
+<script src="static/script.js"></script>
+ <form action="/signin" method="post" id="register">
+     <h3>Sign In</h3>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="username" type="text" required/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" required/>
+        </div>
+        <!-- Display login status -->
+
+
+        <!-- Facebook login or logout button -->
+
+
+        <!-- Display user profile data -->
+
+        <button class="btn btn-primary" type="submit">Sign In</button>
+        <a href="/forgot">forgot password?</a>
+        <p><center>
+            OR
+        </center>
+
+        </p>
+         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+    <div id="status"></div>
+    </form>
+
+{% endblock %}
+{% block footer %}
+    <footer class="footer">
+            <div class="footer-content">
+                <a href="/privacy">Privacy Policy</a> |
+                <a>contact us at juhi33rabbi@gmail.com</a> |
+                <text>Copyright &copy; Ex-log 2018</text>
+            </div>
+    </footer>
+{% endblock %}

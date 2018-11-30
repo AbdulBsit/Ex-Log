@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+<form style="width:600px; height:auto; border:1px solid white" action="/profile" id="files" method="post" enctype="multipart/form-data">
+<br>
+<br>
+<div class="container">
+  <img src="{{ image }}" alt="PROFILE" id="profileImage">
+    <label class="choose" for="image">
+        <img id="cam" src="/static/cam.png">
+    </label>
+    <input id="image" type="file" name="dp" onchange="encode()" />
+    <input type="hidden" name="encodedImg" id="hidden">
+    <div>
+      <h2>{{ uname }}</h2>
+    </div>
+</div>
+{% if count==0 %}
+<hr>
+  <div>
+    <h3>Please answer the security questions</h3>
+        <div class="form-group">
+        <table align="center">
+          <tr>
+            <td align="left"><label for="1">First Friend</label></td>
+            <td align="left"><input autocomplete="off" id="1" autofocus class="form-control" name="firstfriend" placeholder="Type your answer" type="text"/ required></td>
+          </tr>
+<br>
+          <tr>
+            <td align="left"><label for="2">Favourite Book</label></td>
+            <td align="left"><input autocomplete="off" id="2" autofocus class="form-control" name="favouritebook" placeholder="Type your answer" type="text"/ required></td>
+          </tr>
+        </table>
+        </div>
+
+  </div>{% endif %}
+
+  <hr>
+
+<div>
+  <h3>Choose Your Interest</h3>
+ <table align="center">
+  <tr>
+    <td align="left"><input type="checkbox" name="business" value="business"> Business</td>
+   <td align="left"><input type="checkbox" name="entrepreneurship" value="entrepreneurship"> Entrepreneurship</td>
+  </tr>
+  <tr>
+  <td align="left"><input type="checkbox" name="politics" value="politics"> Politics</td>
+  <td align="left"><input type="checkbox" name="science" value="science"> Science</td>
+  </tr>
+  <tr>
+  <td align="left"><input type="checkbox" name="technology" value="technology"> Tech</td>
+  <td align="left"><input type="checkbox" name="entertainment" value="entertainment"> Entertainment</td>
+  </tr>
+  <tr>
+  <td align="left"><input type="checkbox" name="writing" value="writing"> Writing</td>
+  <td align="left"><input type="checkbox" name="health" value="health"> Health</td>
+  </tr>
+  <tr>
+  <td align="left"><input type="checkbox" name="self" value="self"> Self</td>
+  <td align="left"><input type="checkbox" name="fashion" value="fashion"> Fashion</td>
+  </tr>
+  </table>
+  </div>
+  <hr>
+
+  <table align="center">
+   <!--<tr> <td><button class="btn btn-primary" type="submit">Save</button></td>-->
+   <input type="submit" class="btn btn-primary"/>&nbsp
+
+  {% if count==0 %}
+  <a href="/" class="btn btn-primary">Skip</a>
+  {% else %}
+  <a href="/" class="btn btn-primary">Cancel</a>
+  {% endif %}
+  <td>
+    <div>
+        <a type="button" class="btn btn-primary" href="/signout" onclick="fblogout();">Sign Out</a>
+    </div>
+  </td>
+
+  </tr><tr></table>
+</div>
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,236 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: 60%;
+}
+body{
+    background-color:#D3D3D3;
+    /*width:1300px;*/
+    }
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+#profileImage
+{
+    height:120px;
+    width:120px;
+    border-radius: 50%;
+    border: 1px solid black;
+
+}
+td {
+    padding-top: .5em;
+    padding-bottom: .5em;
+
+}
+
+#cam{
+  height:auto;
+  width:auto;
+  border-radius:50%;
+}
+
+.container > input
+{
+    display: none;
+}
+
+
+
+.container {
+  position: relative;
+
+  width: 50%;
+}
+
+.container > label {
+    border-radius:50%;
+  position: absolute;
+  background-color: transparent;
+  border:1px solid black;
+  cursor: pointer;
+  display: block;
+  TOP:35px; LEFT:125px; WIDTH:50px; HEIGHT:50px; RIGHT:20px; BOTTOM:10px;
+}
+
+.container .choose:hover {
+  background-color: skyblue;
+}
+
+#gif{
+    width:400px;
+    height:375px;
+}
+
+
+.sidenav {
+    position:fixed;
+	float: left;
+	width: 200px;
+	margin-left:4px;
+	padding: 50px 10px 50px 30px;
+	background-color:lightgrey;
+
+	z-index:1;
+}
+
+
+#profile
+{
+    height:27px;
+    width: 27px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+#files{
+    background-color:white;
+    box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.4), 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:1;
+}
+
+.sticky + .sidenav {
+  padding-top: 102px;
+  top:50;
+}
+
+.rsidenav {
+
+        display:none;
+		top:50;
+		right:0;
+		position:fixed;
+		width: 187px;
+		padding: 15px 10px;
+		padding-bottom:600px;
+		background-color:lightgrey;
+		z-index:1;
+
+
+}
+
+#register
+{   border-radius:20px/20px;
+    border:1px solid lightgrey;
+    padding-top:45px;
+    z-index:500;
+    padding-bottom:35px;
+    background-color:lightgrey;
+    box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.4), 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+
+}
+#length1{
+    display:none;
+}
+#length2{
+    display:none;
+}
+
+.footer{
+    background-color:black;
+    width:100%;
+    height:auto;
+    margin-top:50px;
+    padding-top:40px;
+    padding-bottom:20px;
+    position:fixed;
+    z-index:1;
+   left:0px;
+   bottom:0px;
+
+}
+.footer-content{
+ color: white;
+ text-align:center;
+}
+.card{
+    position:relative;
+    height:377px;
+}
+.preview{
+    padding: 10px 10px 10px 10px;
+    width: 423px;
+    height:398px;
+    background-color:white;
+    margin-bottom: 15px
+}
+.preview a{ display:hidden;}
+#myHeader{
+    background-color:black;
+    width:100%;
+}
+.textcard{
+    position:absolute;
+    bottom:0;
+}
+
+#articleimg{
+    width:400px;
+    height:225px;
+
+}
+.article{
+    background-color:grey;
+    height: auto;
+    width: 887px;
+    margin-left: 210px;
+}
+.column1{
+    margin-left:10px;
+}
+
+.column2 {
+    margin-left:15px;
+}
+
+
+
+
+

@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+{% block sidebar %}
+  <div class="sidenav" id="side">
+  <form action="/" method="post">
+  <h3>Choose</h3>
+  <input type = "radio" name = "search" value = "business" /> Business <br>
+  <input type = "radio" name = "search" value = "entrepreneurship" /> Entrepreneurship <br>
+  <input type = "radio" name = "search" value = "politics" /> Politics <br>
+  <input type = "radio" name = "search" value = "science" /> Science <br>
+  <input type = "radio" name = "search" value = "technology" /> Tech <br>
+  <input type = "radio" name = "search" value = "entertainment" /> Entertainment <br>
+  <input type = "radio" name = "search" value = "writing" /> Writing <br>
+  <input type = "radio" name = "search" value = "health" /> Health <br>
+  <input type = "radio" name = "search" value = "self" /> Self <br>
+  <input type = "radio" name = "search" value = "fashion" /> Fashion <br>
+  <input type = "submit" class="btn btn-primary" value = "Select Interest" />
+</form>
+<br>
+<hr>
+<a href="/privacy">Privacy Policy</a> <br>
+  <a>contact us at juhi33rabbi@gmail.com</a>
+<hr>
+</div>
+{% endblock %}
+{% block rsidebar %}
+    <div class="rsidenav" id="mySidebar">
+      <div style="padding-left:40px">
+      <img src="{{ image }}" align="middle" id="profileImage">
+    </div>
+
+    <div style="text-align:center" id="button">
+      <div style="padding-left:20px">
+        <text>{{ username }}</text>
+        <h4>{{ name }}</h4>
+        <div>
+          <a type="button" class="btn btn-primary btn-sm" style="margin: 3px;background-color: darkslategrey;" href="/signout" onclick="fblogout();">Sign Out</a>
+        </div>
+        </div>
+        <div style="padding-left:20px">
+          <a type="button" class="btn btn-primary btn-sm" style="margin: 3px;background-color: darkslategrey;" href="/profile">Edit Profile</a>
+        </div>
+        <div style="padding-left:20px">
+          <a type="button" class="btn btn-primary btn-sm" style="margin: 3px;background-color: darkslategrey;" href="/recover" style:"color:black">Change Password</a>
+        </div>
+          <hr>
+          <h3>Interests</h3>
+        <div class="rinterest" style="padding-left:20px">
+          {% for interest in interests %}
+          <li style="text-align:left">{{ interest.interests }}</li>
+          {% endfor %}
+          {% if not interests %}
+          <text>No Interests to show</text>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+{% block column1 %}
+<p id="length1">{{ length1 }}</p>
+  {% for url in article1 %}
+  <div class="preview" id="pre1">
+         <a href="{{ url }}" target="_blank"></a>
+         <img id="gif" src="static/loading.gif">
+  </div>
+  	<script>
+    	      var divlength1 = document.getElementById("length1").innerHTML
+            var divs1 = document.querySelectorAll('#pre1')
+            console.log("I'm div1",divs1.length)
+            if (divs1.length == divlength1){
+            divs1.forEach(function(div) {
+
+                 url = $(div).find("a").attr("href")
+
+            	var ur="https://ide50-atiya-rabbi.cs50.io:8081/?url=" + url;
+            	$.ajax({
+            	    url:ur,
+            	method:"GET",
+                success: function(response){
+                div.innerHTML = response;
+                    }
+            	})
+
+        	});
+            }
+        </script>
+   {% endfor %}
+
+{% endblock %}
+{% block column2 %}
+<p id="length2">{{ length2 }}</p>
+  {% for url in article2 %}
+  <div class="preview" id="pre2">
+         <a href="{{ url }}"></a>
+         <img id="gif" src="static/loading.gif">
+  </div>
+  <script>
+    	      var divlength2 = document.getElementById("length2").innerHTML
+            var divs2 = document.querySelectorAll('#pre2')
+            console.log(divs2.length)
+            if (divs2.length == divlength2){
+            divs2.forEach(function(div) {
+
+                 url = $(div).find("a").attr("href")
+
+            	var ur="https://ide50-atiya-rabbi.cs50.io:8081/?url=" + url;
+            	$.ajax({
+            	    url:ur,
+            	method:"GET",
+                success: function(response){
+
+                div.innerHTML = response;
+                    }
+            	})
+
+        	});
+            }
+        </script>
+  {% endfor %}
+
+{% endblock %}
